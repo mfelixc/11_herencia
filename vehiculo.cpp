@@ -95,105 +95,18 @@ int main(){
     int velocidad, cantidaddepuertas, cantidaddeasientos;
     string placaCamion, colorCamion, marcaCamion;
     int velocidadCamion, cargaCamion,opcion;
-    cout<<"Seleccione el tipo de vehiculo: "<<endl;
-    cout<<"1. Automovil"<<endl;
-    cout<<"2. Camion"<<endl;
-    cin>>opcion;
-    switch (opcion) {
-        case 1:{
-            cout<<"Ingrese los datos del automovil: "<<endl;
-            cout<<"Numero de placa: ";
-            cin>>placa;
-            cout<<"Color: ";
-            cin>>color;
-            cout<<"Marca: ";
-            cin>>marca;
-            cout<<"Velocidad: ";
-            cin>>velocidad;
-            cout<<"Cantidad de puertas: ";
-            cin>>cantidaddepuertas;
-            cout<<"Cantidad de asientos: ";
-            cin>>cantidaddeasientos;
-            
-            Automovil auto1(placa, color, marca, velocidad, cantidaddepuertas, cantidaddeasientos);
-            auto1.mostrarAutomovil();
-            cout <<"Desea cambiar la velocidad del automovil? (1. Si / 2. No): ";
-            cin >> opcion;  
-            switch (opcion)
-            {
-                case 1:
-                    int nuevaVelocidad;
-                    cout << "Ingrese la nueva velocidad: ";
-                    cin >> nuevaVelocidad;
-                    auto1.cambiarVelocidad(nuevaVelocidad);
-                    cout << "La velocidad del automovil ha sido cambiada a " << nuevaVelocidad << " km/h." << endl;
-                    break;
-                case 2:
-                    cout << "No se realizo ningun cambio en la velocidad del automovil." << endl;
-                    break;
-                default:
-                    cout << "Opcion invalida." << endl;
-            }
-            cout <<"Desea subir o bajar pasajeros del automovil? (1. Subir / 2. Bajar / 3. Ninguno): ";
-            cin >> opcion;
-            switch (opcion)
-            {
-                case 1:
-                    int pasajerosSubir;
-                    cout << "Ingrese la cantidad de pasajeros a subir: ";
-                    cin >> pasajerosSubir;
-                    auto1.subirpasajeros(pasajerosSubir);
-                    cout << "Se han subido " << pasajerosSubir << " pasajeros al automovil." << endl;
-                    break;
-                case 2:
-                    int pasajerosBajar;
-                    cout << "Ingrese la cantidad de pasajeros a bajar: ";
-                    cin >> pasajerosBajar;
-                    auto1.bajarpasajeros(pasajerosBajar);
-                    cout << "Se han bajado " << pasajerosBajar << " pasajeros del automovil." << endl;
-                    break;
-                case 3:
-                    cout << "No se realizo ningun cambio en la cantidad de pasajeros del automovil." << endl;
-                    break;
-                default:
-                    cout << "Opcion invalida." << endl;
-            }   
-            break;}
-        case 2:{
-            cout<<"Ingrese los datos del camion: "<<endl;
-            cout<<"Numero de placa: ";
-            cin>>placaCamion;
-            cout<<"Color: ";
-            cin>>colorCamion;
-            cout<<"Marca: ";
-            cin>>marcaCamion;
-            cout<<"Velocidad: ";
-            cin>>velocidadCamion;
-            cout<<"Carga: ";
-            cin>>cargaCamion;
-
-            Camion camion1(placaCamion, colorCamion, marcaCamion, velocidadCamion, cargaCamion);
-            camion1.mostrarCamion();
-            cout <<"Desea cambiar la carga del camion? (1. Si / 2. No): ";
-            cin >> opcion; 
-            switch (opcion)
-            {
-                case 1:
-                    int nuevaCarga;
-                    cout << "Ingrese la nueva carga: ";
-                    cin >> nuevaCarga;
-                    camion1.cambiarCarga(nuevaCarga);
-                    cout << "La carga del camion ha sido cambiada a " << nuevaCarga << " kg." << endl;
-                    break;
-                case 2:
-                    cout << "No se realizo ningun cambio en la carga del camion." << endl;
-                    break;
-                default:
-                    cout << "Opcion invalida." << endl;
-            }
-            break;}
-        default:
-            cout<<"Opcion invalida."<<endl;
-    }
+    Automovil v1("ABC123", "Rojo", "Toyota", 120, 4, 5);
+    v1.mostrarAutomovil();
+    cout << "ingrese la nueva placa: ";
+    cin >> placa;
+    cout << "ingrese el nuevo color: ";
+    cin >> color;   
+    cout << "ingrese la nueva marca: ";
+    cin >> marca;   
+    cout << "ingrese la nueva velocidad: ";
+    cin >> velocidad;
+    v1.cambiarVelocidad(velocidad);
+    
+    v1.mostrarAutomovil();
     return 0;
 }
